@@ -1,0 +1,10 @@
+{
+	"general": {
+		"broker": "127.0.0.1",
+		"port": 1883,
+		"clean_session": true,
+		"keep_alive_sec": 15,
+		"topic": "uc2100/Modbus/Telemetry/",
+		"publish_interval": 1
+	}
+}

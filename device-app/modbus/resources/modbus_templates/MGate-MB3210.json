@@ -1,0 +1,11 @@
+{
+	"name": "Motor1",
+	"tags": [{
+		"enable": true,
+		"commandName": "motorCurrent",
+		"modbusDataType": "Int",
+		"modbusFunction": "03-ReadHoldingRegisters",
+		"address": 0,
+		"count": 2
+	}]
+}

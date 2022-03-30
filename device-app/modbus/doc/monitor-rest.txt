@@ -1,0 +1,5 @@
+
+sudo curl https://127.0.0.1:8443/api/v1/tags/monitor/modbus_tcp_master/MGate_MB3170?tags=motorCurrent -X GET -H "Content-Type:application/json" -H "mx-api-token:$(sudo cat /var/thingspro/data/mx-api-token)" -k
+
+
+sudo curl https://127.0.0.1:8443/api/v1/tags/monitor/modbus_tcp_master/ioLogik_E1242?tags=oilTempC, LedRedStatus -X GET -H "Content-Type:application/json" -H "mx-api-token:$(sudo cat /var/thingspro/data/mx-api-token)" -k

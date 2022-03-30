@@ -1,0 +1,27 @@
+{
+
+	"modbusTCP":
+	{
+		"enable": true,
+		"device_name": "pymodbus-win10-simulator",
+		"slave_ip": "192.168.137.1",
+		"slave_port": 502,
+		"slave_id": "1",
+		"modbus_template": "pymodbus-slave.json",
+		"polling_interval_sec": 1
+	},
+	"modbusRTU": {
+		"enable": false,
+		"method": "rtu",
+		"baudrate": 38400,
+		"port": "/dev/ttyM0",
+		"port_mode": "RS485-2W",
+		"request_timeout": "None",
+		"stop_bits": "STOPBITS_ONE",
+		"parity": "PARITY_EVEN",
+		"modbus_template": "ADTEK-ADP-PM-A.json"
+	},
+	"troubleshoot": {
+		"enable_debug_mode": false
+	}
+}

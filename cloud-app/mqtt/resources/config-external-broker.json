@@ -1,0 +1,13 @@
+{
+	"general": {
+		"broker": "test.mosquitto.org",
+		"port": 1883,
+		"clean_session": true,
+		"keep_alive_sec": 15,
+		"topic": "uc2100/Modbus/Telemetry/",
+		"publish_interval": 2
+	},
+	"troubleshoot": {
+		"enable_debug_mode": false 
+	}
+}

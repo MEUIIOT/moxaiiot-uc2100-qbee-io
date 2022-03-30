@@ -1,0 +1,29 @@
+{
+	"name": "LV-Pannel-GF",
+	"unitId": "1",
+	"tags": [{
+			"enable": true,
+			"commandName": "tag1",
+			"modbusDataType": "Int",
+			"modbusFunction": "03-ReadHoldingRegisters",
+			"address": 1,
+			"count": 2
+		},
+		{
+			"enable": true,
+			"commandName": "tag2",
+			"modbusDataType": "Int",
+			"modbusFunction": "04-ReadInputRegisters",
+			"address": 1,
+			"count": 2
+		},
+		{
+			"enable": false,
+			"commandName": "tag3",
+			"modbusDataType": "Boolean",
+			"modbusFunction": "02-ReadDiscreteInputs",
+			"address": 0,
+			"count": 1
+		}
+	]
+}
