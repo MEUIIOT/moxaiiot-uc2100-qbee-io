@@ -1,0 +1,19 @@
+{
+	"data": [{
+			"ts": 1648655571003,
+			"tagValue": 13445,
+			"tagName": "motorCurrent",
+			"modbusFC": "03-ReadHoldingRegisters",
+			"prvdName": "modbus_tcp_master",
+			"deviceName": "pymodbus-win10-simulator"
+		},
+		{
+			"ts": 1648655571063,
+			"tagValue": 30075,
+			"tagName": "motorVoltage",
+			"modbusFC": "03-ReadHoldingRegisters",
+			"prvdName": "modbus_tcp_master",
+			"deviceName": "pymodbus-win10-simulator"
+		}
+	]
+}
