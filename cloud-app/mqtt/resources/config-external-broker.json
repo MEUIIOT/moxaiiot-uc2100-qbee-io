@@ -5,7 +5,7 @@
 		"clean_session": true,
 		"keep_alive_sec": 15,
 		"topic": "uc2100/Modbus/Telemetry/",
-		"publish_interval": 2
+		"publish_interval": 3
 	},
 	"troubleshoot": {
 		"enable_debug_mode": false 

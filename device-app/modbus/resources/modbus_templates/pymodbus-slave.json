@@ -15,6 +15,14 @@
 		"modbusFunction": "03-ReadHoldingRegisters",
 		"address": 1,
 		"count": 1
+	},
+	{
+		"enable": true,
+		"commandName": "motorPower",
+		"modbusDataType": "Int",
+		"modbusFunction": "03-ReadHoldingRegisters",
+		"address": 2,
+		"count": 1
 	}
 	]
 }

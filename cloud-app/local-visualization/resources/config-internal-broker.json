@@ -8,6 +8,6 @@
 		"subscribe_interval": 1
 	},
 	"troubleshoot": {
-		"enable_debug_mode":true 
+		"enable_debug_mode":false 
 	}
 }

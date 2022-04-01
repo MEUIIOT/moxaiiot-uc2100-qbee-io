@@ -12,7 +12,6 @@ from internal_broker_subscriber.internal_broker_subscriber import MosquittoMQTTS
 
 logger = setup_logger()
 
-
     
 def build_payload(logger, cloud_mqtt_broker_queue):
     if len(cloud_mqtt_broker_queue) != 0:    
@@ -20,14 +19,18 @@ def build_payload(logger, cloud_mqtt_broker_queue):
         payload = json.loads(payload)    
         return json.dumps(payload)
   
+  
 def build_aggregatd_msg(logger, cloud_mqtt_broker_queue):
     payload = {}
     data = [] 
     while len(cloud_mqtt_broker_queue)>0:
         tag = cloud_mqtt_broker_queue.popleft()
         tag = json.loads(tag)
-        # Insert your code for payload processing, enriching the data, normalization etc. 
-        data.append(tag)
+        if "data" in tag:
+            tagList = tag["data"]
+            for tag in tagList:
+                # Insert your code for payload processing, enriching the data, normalization etc. 
+                data.append(tag)    
     payload["data"] = data 
     logger.debug("build_aggregatd_msg= {}".format(payload))
     return json.dumps(payload)

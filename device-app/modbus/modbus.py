@@ -32,7 +32,21 @@ def modbus_to_mqtt(mqtt, payload):
             logger.info("[Publish] = {}".format(payload))
         else:    
             logger.error("Mqtt Connection CLOSED! {}".format(mqtt_connection))
-
+            
+            
+def build_aggregatd_msg(device_name, modbus_response_deque):
+    payload = {}
+    data = [] 
+    while len(modbus_response_deque)>0:
+        tag = modbus_response_deque.popleft()
+        # Add additional info modbus deviceName and prvdName in the payload received via queue  
+        tag["prvdName"] = "modbus_tcp_master" # static needs to be added dynamically in case modbus rtu device is also enable
+        tag["deviceName"] = device_name    
+        data.append(tag)
+    payload["data"] = data 
+    logger.debug("build_aggregatd_msg= {}".format(payload))
+    return json.dumps(payload)
+        
 
 def build_payload(device_name, modbus_response_deque):
     if len(modbus_response_deque) != 0:    
@@ -47,8 +61,10 @@ def build_payload(device_name, modbus_response_deque):
 def publish_mqtt(mqtt, device_name, modbus_response_deque):
     while True:
         # Publish to MQTT broker 
-        payload = build_payload(device_name, modbus_response_deque)
+        payload = build_aggregatd_msg(device_name, modbus_response_deque)
+        #payload = build_payload(device_name, modbus_response_deque)
         modbus_to_mqtt(mqtt, payload)
+        time.sleep(mqtt._publish_interval)
 
 def main():
     
@@ -114,7 +130,7 @@ def main():
         logger.info("Recv Modbus Thread Started!")
         logger.info("************************")
         
-        mqttThread = threading.Thread(target=publish_mqtt, args=(mqtt, device_name, modbus_response_deque,))
+        mqttThread = threading.Thread(target=publish_mqtt, args=(mqtt, device_name, modbus_response_deque))
         mqttThread.start()
         logger.info("***************************")
         logger.info("Modbus to MQTT Thread Started!")
