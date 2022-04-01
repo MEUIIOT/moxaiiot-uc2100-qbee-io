@@ -46,19 +46,17 @@ def parse_modbus_template(modbus_template):
     Example with the following modbus template 
     function check if keyword "name" and "tags" is in the json file 
     than it returns the object otheriwse, returns None    
-    
     {
-    "name": "PLC1",
-    "tags": [
-        {	
-			"enable": true,
-            "commandName": "oilTempC",
-            "modbusDataType": "Int",
-            "modbusFunction": "04-ReadInputRegisters",
-            "address": 512, 
-			"count": 1
-        }
-    }    
+  	"name": "PLC1",
+  	"tags": [{
+  		"enable": true,
+  		"commandName": "oilTempC",
+  		"modbusDataType": "Int",
+  		"modbusFunction": "04-ReadInputRegisters",
+  		"address": 512,
+  		"count": 1
+  	}]
+    } 
     """    
     if modbus_template["name"]: 
         get_name = modbus_template["name"]
@@ -91,18 +89,17 @@ def check_register_quantity(count, modbusFunction):
     otherwise function return count value
 
     The following condition trigger error with "count":2 
-    {
-    "name": "PLC1",
-    "tags": [
-        {	
-			"enable": true,
-            "commandName": "oilTempC",
-            "modbusDataType": "Int",
-            "modbusFunction": "04-ReadInputRegisters",
-            "address": 512, 
-			"count": 2
-        }
-    } 
+     {
+   	"name": "PLC1",
+   	"tags": [{
+   		"enable": true,
+   		"commandName": "oilTempC",
+   		"modbusDataType": "Int",
+   		"modbusFunction": "04-ReadInputRegisters",
+   		"address": 512,
+   		"count": 2
+   	}]
+    }
     The current implementation doesn't allow to read contigous regerters in one command    
     """
     if count >1:
