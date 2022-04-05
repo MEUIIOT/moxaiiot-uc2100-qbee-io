@@ -1,0 +1,26 @@
+{
+  "enabled": true,
+  "files": [
+    {
+      "templates": [
+        {
+          "source": "/device_app.tar",
+          "destination": "/home/moxa/application/tar/device_app.tar",
+          "is_template": false
+        }
+      ],
+      "command": "tar -xvf /home/moxa/application/tar/device_app.tar -C /home/moxa/application/"
+    },
+    {
+        "templates": [
+            {
+                "source": "/local_vis_app.tar",
+                "destination": "/home/moxa/application/tar/local_vis_app.tar",
+                "is_template": false
+            }
+        ],
+        "command": "tar -xvf /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/"
+    }
+  ],
+  "version": "v1"
+}

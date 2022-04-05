@@ -1,0 +1,88 @@
+name: Python application distribution
+
+on:
+ push:
+    branches: [ main ]
+
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    env:
+      src_device_app: device_app.tar
+      src_cloud_local_vis_app: local_vis_app.tar
+      upload_device_app: false
+      upload_local_vis_app: false
+      substr_device_app: device-app
+      substr_local_vis_app: cloud-app/local-visualization
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v18.6
+
+    - name: update upload variables based on changed files
+      run: |
+        echo "changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          if [[ "$file" == *"$substr_device_app"* ]]; then
+            echo "upload_device_app=true" >> $GITHUB_ENV
+          elif [[ "$file" == *"$substr_local_vis_app"* ]]; then
+            echo "upload_local_vis_app=true" >> $GITHUB_ENV
+          fi
+        done
+
+    - name: view upload status
+      run: |
+      echo "device app: ${{ env.upload_device_app }}"
+      echo "vis app: ${{ env.upload_local_vis_app }}"
+
+    - name: create tarballs
+      run: |
+        mkdir ./tar
+        echo "packing $src_device_app"
+        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' -czvf ./tar/$src_device_app ./$substr_device_app
+        echo "packing $src_cloud_local_vis_app"
+        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' -czvf ./tar/$src_cloud_local_vis_app ./$substr_local_vis_app
+
+    - name: qbee.io authentication
+      id: qbee-auth
+      uses: qbee-io/authenticate-action@v1
+      with:
+          login: ${{ secrets.QBEE_USER }}
+          password: ${{ secrets.QBEE_PW }}
+
+    - name: qbee.io file upload ${{ env.src_device_app }}
+      uses: qbee-io/file-upload-action@v1.1
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: ${{ env.src_device_app }}
+          qbee_directory: '/'
+          local_directory: 'tar'
+          run: ${{ env.upload_device_app }}
+
+    - name: qbee.io file upload ${{ env.src_cloud_local_vis_app }}
+      uses: qbee-io/file-upload-action@v1.1
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: ${{ env.src_cloud_local_vis_app }}
+          qbee_directory: '/'
+          local_directory: 'tar'
+          run: ${{ env.upload_local_vis_app }}
+
+
+    - name: qbee.io file distribtuion
+      uses: qbee-io/file-distribution-action@v1
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          config_file: 'qbee/file_distribution.json'
+          mode: 'if_not_present'
+          device_or_group_id: ${{ secrets.QBEE_DEVICE_ID }}
+          commit_message: 'uploading content from GitHub'
+
+
+
+
+
+
