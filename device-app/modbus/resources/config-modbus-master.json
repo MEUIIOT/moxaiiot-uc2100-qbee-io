@@ -3,11 +3,11 @@
 	"modbusTCP":
 	{
 		"enable": true,
-		"device_name": "pymodbus-win10-simulator",
-		"slave_ip": "192.168.137.1",
+		"device_name": "iologik",
+		"slave_ip": "192.168.3.200",
 		"slave_port": 502,
 		"slave_id": "1",
-		"modbus_template": "pymodbus-slave.json",
+		"modbus_template": "ioLogik-E1242.json",
 		"polling_interval_sec": 1
 	},
 	"modbusRTU": {
