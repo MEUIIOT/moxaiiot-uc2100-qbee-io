@@ -9,7 +9,7 @@
           "is_template": false
         }
       ],
-      "command": "tar -xvf /home/moxa/application/tar/device_app.tar -C /home/moxa/application/"
+      "command": "sudo -u moxa tar -xvoz /home/moxa/application/tar/device_app.tar -C /home/moxa/application/"
     },
     {
         "templates": [
@@ -19,7 +19,7 @@
                 "is_template": false
             }
         ],
-        "command": "tar -xvf /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/"
+        "command": "sudo -u moxa tar -xvoz /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/"
     }
   ],
   "version": "v1"
