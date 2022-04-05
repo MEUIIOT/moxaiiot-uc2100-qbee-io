@@ -61,8 +61,7 @@ jobs:
           filename: ${{ env.src_device_app }}
           qbee_directory: '/'
           local_directory: 'tar'
-
-    #run: ${{ env.upload_device_app }} || ${{ env.upload_all }}
+          run: ${{ env.upload_device_app }}
 
     - name: qbee.io file upload ${{ env.src_cloud_local_vis_app }}
       uses: qbee-io/file-upload-action@v1.1
@@ -71,8 +70,7 @@ jobs:
           filename: ${{ env.src_cloud_local_vis_app }}
           qbee_directory: '/'
           local_directory: 'tar'
-
-    #run: ${{ env.upload_local_vis_app }} || ${{ env.upload_all }}
+          run: ${{ env.upload_local_vis_app }}
 
 
     - name: qbee.io file distribtuion
