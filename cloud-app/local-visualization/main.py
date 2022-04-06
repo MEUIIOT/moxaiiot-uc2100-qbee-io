@@ -1,6 +1,7 @@
 import requests
-import time 
-import json 
+import time
+import json
+import os
 
 from utils.utility_functions import read_ext_config
 
@@ -11,14 +12,14 @@ from internal_broker_subscriber.internal_broker_subscriber import MosquittoMQTTS
 
 logger = setup_logger()
 
-    
+
 def start_mqtt_cloud_app(logger, topic, interval):
-  
+
     cloud_mqtt_broker_queue = deque(maxlen=100)
-    
+
     int_broker_subscriber = MosquittoMQTTSubscriber(logger, cloud_mqtt_broker_queue, topic)
     int_broker_subscriber.run()
- 
+
     # Main loop start
     while True:
         process_payloads(logger, cloud_mqtt_broker_queue)
@@ -30,8 +31,8 @@ def start_mqtt_cloud_app(logger, topic, interval):
         #    send_to_server(payload)
         #    print("sleep interval is: ", interval)
         #    print("\n")
-    
-    
+
+
 def process_payloads(logger, cloud_mqtt_broker_queue):
     """
     Received payload sample
@@ -64,7 +65,7 @@ def process_payloads(logger, cloud_mqtt_broker_queue):
         while len(cloud_mqtt_broker_queue) != 0:
             payload = cloud_mqtt_broker_queue.popleft()
             payload = json.loads(payload)
-            # Insert your code for payload processing 
+            # Insert your code for payload processing
             #return payload #json.dumps(payload)
             send_to_server(payload)
     except Exception as ex:
@@ -83,16 +84,18 @@ def send_to_server(payload):
         print(data)
         requests.post(url,json=data)
 
-    
+
 def main():
-    
-    # Read configuretaion file into python object 
-    config_int_broker = read_ext_config('resources/config-internal-broker.json')
+    abs_path = os.path.dirname(os.path.realpath(__file__))
+    # Read configuretaion file into python object
+    config_int_broker = read_ext_config(
+        os.path.join(abs_path,'resources/config-internal-broker.json')
+    )
     update_logger_verbose_level_from_config_file(logger, config_int_broker)
     update_logger_verbose_level(logger,1)
-    
+
     start_mqtt_cloud_app(logger, topic=config_int_broker["general"]["topic"], interval=config_int_broker["general"]["subscribe_interval"])
-    
+
 if __name__ == '__main__':
-    main() 
-    
+    main()
+
