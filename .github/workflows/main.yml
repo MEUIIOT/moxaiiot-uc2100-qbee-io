@@ -55,7 +55,7 @@ jobs:
           password: ${{ secrets.QBEE_PW }}
 
     - name: qbee.io file upload ${{ env.src_device_app }}
-      uses: qbee-io/file-upload-action@v1.1
+      uses: qbee-io/file-upload-action@v1.2
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
           filename: ${{ env.src_device_app }}
@@ -64,7 +64,7 @@ jobs:
           run: ${{ env.upload_device_app }}
 
     - name: qbee.io file upload ${{ env.src_cloud_local_vis_app }}
-      uses: qbee-io/file-upload-action@v1.1
+      uses: qbee-io/file-upload-action@v1.2
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
           filename: ${{ env.src_cloud_local_vis_app }}

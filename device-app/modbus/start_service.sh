@@ -1,5 +1,5 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-EXEC_SCRIPT="modbus_test.py"
+EXEC_SCRIPT="modbus.py"
 PATH_TO_SCRIPT="$SCRIPT_DIR/$EXEC_SCRIPT"
 RUN_CMD="python3 $PATH_TO_SCRIPT"
 
