@@ -39,7 +39,7 @@ jobs:
 
     - name: view upload status
       run: |
-        echo "device app: ${{ env.upload_device_app }}""
+        echo "device app: ${{ env.upload_device_app }}"
         echo "vis app: ${{ env.upload_local_vis_app }}"
 
     - name: create tarballs
