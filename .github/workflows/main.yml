@@ -36,8 +36,8 @@ jobs:
 
     - name: view upload status
       run: |
-        echo "device app: ${{ env.upload_device_app }}"
-        echo "vis app: ${{ env.upload_local_vis_app }}"
+        echo "device app: $(( ${{ env.upload_device_app }}==true || ${{ env.upload_all }}==true ))"
+        echo "vis app: $(( ${{ env.upload_local_vis_app }} || ${{ env.upload_all }}==true ))"
 
     - name: create tarballs
       run: |
@@ -61,7 +61,7 @@ jobs:
           filename: ${{ env.src_device_app }}
           qbee_directory: '/'
           local_directory: 'tar'
-          run: $(( ${{ env.upload_device_app }}==true || ${{ env.upload_all }}==true ))
+          run: ${{ env.upload_device_app }}
 
     - name: qbee.io file upload ${{ env.src_cloud_local_vis_app }}
       uses: qbee-io/file-upload-action@v1.1
@@ -70,7 +70,7 @@ jobs:
           filename: ${{ env.src_cloud_local_vis_app }}
           qbee_directory: '/'
           local_directory: 'tar'
-          run: $(( ${{ env.upload_local_vis_app }} || ${{ env.upload_all }}==true ))
+          run: ${{ env.upload_local_vis_app }}
 
 
     - name: qbee.io file distribtuion
@@ -78,7 +78,7 @@ jobs:
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
           config_file: 'qbee/file_distribution.json'
-          mode: 'replace'
+          mode: 'if_not_present'
           device_or_group_id: ${{ secrets.QBEE_DEVICE_ID }}
           commit_message: 'uploading content from GitHub'
 
