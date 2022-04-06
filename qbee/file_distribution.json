@@ -1,26 +1,26 @@
 {
-  "enabled": true,
-  "files": [
-    {
-      "templates": [
+    "enabled": true,
+    "files": [
         {
-          "source": "/device_app.tar",
-          "destination": "/home/moxa/application/tar/device_app.tar",
-          "is_template": false
+            "templates": [
+                {
+                    "source": "/device_app.tar",
+                    "destination": "/home/moxa/application/tar/device_app.tar",
+                    "is_template": false
+                }
+            ],
+            "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/ && bash /home/moxa/application/device-app/modbus/stop_service.sh && sudo -u moxa bash /home/moxa/application/device-app/modbus/start_service.sh"
+        },
+        {
+            "templates": [
+                {
+                    "source": "/local_vis_app.tar",
+                    "destination": "/home/moxa/application/tar/local_vis_app.tar",
+                    "is_template": false
+                }
+            ],
+            "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/device_app.tar -C /home/moxa/application/ && bash /home/moxa/application/cloud-app/local-visualization/stop_service.sh && sudo -u moxa bash /home/moxa/application/cloud-app/local-visualization/start_service.sh"
         }
-      ],
-      "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/device_app.tar -C /home/moxa/application/ && bash /home/moxa/application/cloud-app/local-visualization/stop_service.sh && sudo -u moxa bash /home/moxa/application/cloud-app/local-visualization/start_service.sh"
-    },
-    {
-        "templates": [
-            {
-                "source": "/local_vis_app.tar",
-                "destination": "/home/moxa/application/tar/local_vis_app.tar",
-                "is_template": false
-            }
-        ],
-        "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/ && bash /home/moxa/application/device-app/modbus/stop_service.sh && sudo -u moxa bash /home/moxa/application/device-app/modbus/start_service.sh"
-    }
-  ],
-  "version": "v1"
+    ],
+    "version": "v1"
 }
