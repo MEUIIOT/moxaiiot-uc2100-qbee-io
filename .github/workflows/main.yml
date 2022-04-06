@@ -33,6 +33,9 @@ jobs:
             echo "upload_local_vis_app=1" >> $GITHUB_ENV
           fi
         done
+
+    - name: applying upload_all correction
+      run: |
         echo "applying upload_all correction"
         echo "upload_device_app=$(( ${{ env.upload_device_app }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
         echo "upload_local_vis_app=$(( ${{ env.upload_local_vis_app }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
