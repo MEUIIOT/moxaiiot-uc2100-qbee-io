@@ -2,7 +2,7 @@
 	"name": "PLC1",
 	"tags": [{
 			"enable": true,
-			"commandName": "Process Temperature",
+			"commandName": "Process Temperature 1",
 			"modbusDataType": "Int",
 			"modbusFunction": "04-ReadInputRegisters",
 			"address": 512,
