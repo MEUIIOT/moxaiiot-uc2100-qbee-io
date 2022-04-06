@@ -10,11 +10,11 @@ jobs:
     env:
       src_device_app: device_app.tar
       src_cloud_local_vis_app: local_vis_app.tar
-      upload_device_app: false
-      upload_local_vis_app: false
+      upload_device_app: 0
+      upload_local_vis_app: 0
       substr_device_app: device-app
       substr_local_vis_app: cloud-app/local-visualization
-      upload_all: true
+      upload_all: 1
 
     steps:
     - uses: actions/checkout@v2
@@ -28,16 +28,19 @@ jobs:
         echo "changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
           if [[ "$file" == *"$substr_device_app"* ]]; then
-            echo "upload_device_app=true" >> $GITHUB_ENV
+            echo "upload_device_app=1" >> $GITHUB_ENV
           elif [[ "$file" == *"$substr_local_vis_app"* ]]; then
-            echo "upload_local_vis_app=true" >> $GITHUB_ENV
+            echo "upload_local_vis_app=1" >> $GITHUB_ENV
           fi
         done
+        echo "applying upload_all correction"
+        echo "upload_device_app=$(( ${{ env.upload_device_app }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
+        echo "upload_local_vis_app=$(( ${{ env.upload_local_vis_app }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
 
     - name: view upload status
       run: |
-        echo "device app: $(( ${{ env.upload_device_app }}==true || ${{ env.upload_all }}==true ))"
-        echo "vis app: $(( ${{ env.upload_local_vis_app }} || ${{ env.upload_all }}==true ))"
+        echo "device app: ${{ env.upload_device_app }}""
+        echo "vis app: ${{ env.upload_local_vis_app }}"
 
     - name: create tarballs
       run: |
