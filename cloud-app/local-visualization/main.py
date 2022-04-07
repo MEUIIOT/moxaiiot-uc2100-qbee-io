@@ -13,9 +13,9 @@ from internal_broker_subscriber.internal_broker_subscriber import MosquittoMQTTS
 from logging.handlers import RotatingFileHandler
 
 logger = setup_logger()
-handler = RotatingFileHandler('/home/moxa/application/logs/vis.log', maxBytes=2000000,
-                              backupCount=0)
-logger.addHandler(handler)
+#handler = RotatingFileHandler('/home/moxa/application/logs/vis.log', maxBytes=2000000,
+#                              backupCount=0)
+#logger.addHandler(handler)
 
 def start_mqtt_cloud_app(logger, topic, interval, transformation_config, plot_server_config):
 
