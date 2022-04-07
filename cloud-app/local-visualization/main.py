@@ -78,32 +78,28 @@ def process_payloads(logger, cloud_mqtt_broker_queue, transformation_config,plot
 
 def apply_unit_transformation(payload,transformation_config):
     data_arr = payload["data"]
-    new_data = []
     for item in data_arr:
         tagName = item["tagName"]
         if( tagName in transformation_config ):
             ## get params
+            enabled = transformation_config[tagName]["enabled"]
+            if(not enabled):
+                continue
             tRange = transformation_config[tagName]["range"]
             length = transformation_config[tagName]["length"]
             unit = transformation_config[tagName]["unit"]
             suffix = transformation_config[tagName]["suffix"]
-            keep_orig = transformation_config[tagName]["keep_orig"]
             ## apply trafo
             old_val = item["tagValue"]
             new_val = old_val / length * (tRange[1] - tRange[0]) + tRange[0]
             ## title
             newTagName = tagName + suffix
             # overwrite or copy
-            newItem = copy.copy(item)
 
-            newItem["tagName"] = newTagName
-            newItem["tagValue"] = new_val
-            newItem["unit"] = unit
+            item["tagName"] = newTagName
+            item["tagValue"] = new_val
+            item["unit"] = unit
 
-            new_data.append(newItem)
-            if(not keep_orig):
-                data_arr.remove(item)
-    data_arr = data_arr + new_data
     payload["data"] = data_arr
     return payload
 
