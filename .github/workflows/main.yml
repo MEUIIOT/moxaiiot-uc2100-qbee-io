@@ -49,7 +49,8 @@ jobs:
       run: |
         mkdir ./tar
         echo "packing $src_device_app"
-        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' -czvf ./tar/$src_device_app ./$substr_device_app
+        echo "excluding device_app/modbus/resources/config-modbus-master.json"
+        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' --exclude='device_app/modbus/resources/config-modbus-master.json' -czvf ./tar/$src_device_app ./$substr_device_app
         echo "packing $src_cloud_local_vis_app"
         tar --exclude='./.git' --exclude='./.github' --exclude='./tar' -czvf ./tar/$src_cloud_local_vis_app ./$substr_local_vis_app
 
@@ -78,13 +79,21 @@ jobs:
           local_directory: 'tar'
           run: ${{ env.upload_local_vis_app }}
 
+    - name: qbee.io file upload config-modbus-master.json
+      uses: qbee-io/file-upload-action@v1.2
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: 'config-modbus-master.json'
+          qbee_directory: '/'
+          local_directory: 'device_app/modbus/resources/'
+
 
     - name: qbee.io file distribtuion
       uses: qbee-io/file-distribution-action@v1
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
           config_file: 'qbee/file_distribution.json'
-          mode: 'if_not_present'
+          mode: 'replace'
           device_or_group_id: ${{ secrets.QBEE_DEVICE_ID }}
           commit_message: 'uploading content from GitHub'
 

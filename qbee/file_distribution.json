@@ -4,9 +4,20 @@
         {
             "templates": [
                 {
+                    "source": "/config-modbus-master.json",
+                    "destination": "/home/moxa/application/device_app/modbus/resources/config-modbus-master.json",
+                    "is_template": true
+                },
+                {
                     "source": "/device_app.tar",
                     "destination": "/home/moxa/application/tar/device_app.tar",
                     "is_template": false
+                }
+            ],
+            "parameters": [
+                {
+                    "key": "POLLING_RATE",
+                    "value": "5"
                 }
             ],
             "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/device_app.tar -C /home/moxa/application/ && bash /home/moxa/application/device-app/modbus/stop_service.sh && sudo -u moxa bash /home/moxa/application/device-app/modbus/start_service.sh"
