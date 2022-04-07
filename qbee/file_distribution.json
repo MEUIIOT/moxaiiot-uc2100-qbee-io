@@ -5,7 +5,7 @@
             "templates": [
                 {
                     "source": "/config-modbus-master.json",
-                    "destination": "/home/moxa/application/device_app/modbus/resources/config-modbus-master.json",
+                    "destination": "/home/moxa/application/device-app/modbus/resources/config-modbus-master.json",
                     "is_template": true
                 },
                 {
