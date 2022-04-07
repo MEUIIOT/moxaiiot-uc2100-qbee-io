@@ -8,7 +8,7 @@
 		"slave_port": 502,
 		"slave_id": "1",
 		"modbus_template": "ioLogik-E1242.json",
-		"polling_interval_sec": "{{POLLING_RATE}}"
+		"polling_interval_sec": {{POLLING_RATE}}
 	},
 	"modbusRTU": {
 		"enable": false,
