@@ -14,7 +14,7 @@ jobs:
       upload_local_vis_app: 0
       substr_device_app: device-app
       substr_local_vis_app: cloud-app/local-visualization
-      upload_all: 0
+      upload_all: 1
 
     steps:
     - uses: actions/checkout@v2
