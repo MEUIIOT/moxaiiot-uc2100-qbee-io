@@ -49,8 +49,8 @@ jobs:
       run: |
         mkdir ./tar
         echo "packing $src_device_app"
-        echo "excluding device_app/modbus/resources/config-modbus-master.json"
-        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' --exclude='device_app/modbus/resources/config-modbus-master.json' -czvf ./tar/$src_device_app ./$substr_device_app
+        echo "excluding device-app/modbus/resources/config-modbus-master.json"
+        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' --exclude='device-app/modbus/resources/config-modbus-master.json' -czvf ./tar/$src_device_app ./$substr_device_app
         echo "packing $src_cloud_local_vis_app"
         tar --exclude='./.git' --exclude='./.github' --exclude='./tar' -czvf ./tar/$src_cloud_local_vis_app ./$substr_local_vis_app
 
