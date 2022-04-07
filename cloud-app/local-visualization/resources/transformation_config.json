@@ -1,0 +1,17 @@
+{
+    "Process Temperature":{
+        "range": [0, 10000],
+        "length": 65536,
+        "unit": "\u2103",
+        "suffix": " (transformed)",
+        "keep_orig": false
+    },
+
+    "Current":{
+        "range": [0,10],
+        "length": 65536,
+        "unit": "A",
+        "suffix": " (transformed)",
+        "keep_orig": false
+    }
+}
