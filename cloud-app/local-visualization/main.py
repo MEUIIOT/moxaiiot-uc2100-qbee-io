@@ -83,6 +83,7 @@ def apply_unit_transformation(payload,transformation_config):
         if( tagName in transformation_config ):
             ## get params
             enabled = transformation_config[tagName]["enabled"]
+            # skip if not enabled
             if(not enabled):
                 continue
             tRange = transformation_config[tagName]["range"]
