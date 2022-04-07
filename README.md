@@ -1,8 +1,8 @@
+
+![image](https://user-images.githubusercontent.com/102030308/162206179-2de6b0bb-73ca-4207-8369-e31c3135a208.png)
+
+
 # Getting Started
-
-## ![image](https://user-images.githubusercontent.com/102030308/162206179-2de6b0bb-73ca-4207-8369-e31c3135a208.png)
-
-
 By default on UC computer Debian9 linux python is not pre-installed.
 
 Run following commands to install python3 and package manager (pip3)
