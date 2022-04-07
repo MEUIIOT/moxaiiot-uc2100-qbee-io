@@ -85,7 +85,7 @@ jobs:
           token: ${{ steps.qbee-auth.outputs.token }}
           filename: 'config-modbus-master.json'
           qbee_directory: '/'
-          local_directory: 'device_app/modbus/resources/'
+          local_directory: 'device-app/modbus/resources/'
 
 
     - name: qbee.io file distribtuion
