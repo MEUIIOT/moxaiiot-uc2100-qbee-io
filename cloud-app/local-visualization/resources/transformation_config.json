@@ -1,6 +1,6 @@
 {
     "Process Temperature":{
-        "range": [0, 10000],
+        "range": [0, 500],
         "length": 65536,
         "unit": "C",
         "suffix": " (transformed)",

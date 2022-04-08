@@ -14,7 +14,7 @@ jobs:
       upload_local_vis_app: 0
       substr_device_app: device-app
       substr_local_vis_app: cloud-app/local-visualization
-      upload_all: 1
+      upload_all: 0
 
     steps:
     - uses: actions/checkout@v2
@@ -93,7 +93,7 @@ jobs:
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
           config_file: 'qbee/file_distribution.json'
-          mode: 'replace'
+          mode: 'if_not_present'
           device_or_group_id: ${{ secrets.QBEE_DEVICE_ID }}
           commit_message: 'uploading content from GitHub'
 
