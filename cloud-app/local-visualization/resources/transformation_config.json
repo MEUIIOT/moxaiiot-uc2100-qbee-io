@@ -2,7 +2,7 @@
     "Process Temperature":{
         "range": [0, 500],
         "length": 65536,
-        "unit": "C",
+        "unit": "\u2103",
         "suffix": " (transformed)",
         "enabled": true
     },
