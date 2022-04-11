@@ -93,7 +93,7 @@ jobs:
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
           config_file: 'qbee/file_distribution.json'
-          mode: 'if_not_present'
+          mode: 'replace'
           device_or_group_id: ${{ secrets.QBEE_DEVICE_ID }}
           commit_message: 'uploading content from GitHub'
 
