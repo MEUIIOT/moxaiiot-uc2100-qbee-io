@@ -20,7 +20,7 @@
                     "value": "5"
                 }
             ],
-            "command": "find application -type d -exec chown moxa:moxa {} + && sudo -u moxa tar -xvof /home/moxa/application/tar/device_app.tar -C /home/moxa/application/ && bash /home/moxa/application/device-app/modbus/stop_service.sh && sudo -u moxa bash /home/moxa/application/device-app/modbus/start_service.sh"
+            "command": "find /home/moxa/application -type d -exec chown moxa:moxa {} + && sudo -u moxa tar -xvof /home/moxa/application/tar/device_app.tar -C /home/moxa/application/ && bash /home/moxa/application/device-app/modbus/stop_service.sh && sudo -u moxa bash /home/moxa/application/device-app/modbus/start_service.sh"
         },
         {
             "templates": [
