@@ -71,7 +71,7 @@ def process_payloads(logger, cloud_mqtt_broker_queue, transformation_config,plot
         while len(cloud_mqtt_broker_queue) != 0:
             payload = cloud_mqtt_broker_queue.popleft()
             payload = json.loads(payload)
-            payload = apply_unit_transformation(payload,transformation_config)
+            #payload = apply_unit_transformation(payload,transformation_config)
             send_to_server(payload,plot_server_url)
     except Exception as ex:
         logger.error("Caught an Exception when getting queue item. Exception {}:".format(ex))
