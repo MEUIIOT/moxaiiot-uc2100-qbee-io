@@ -8,12 +8,15 @@ jobs:
  build:
     runs-on: ubuntu-latest
     env:
+      src_install: install.tar
       src_device_app: device_app.tar
       src_cloud_local_vis_app: local_vis_app.tar
+      upload_install: 0
       upload_device_app: 0
       upload_local_vis_app: 0
-      substr_device_app: device-app
-      substr_local_vis_app: cloud-app/local-visualization
+      folder_install: install
+      folder_device_app: device-app
+      folder_local_vis_app: cloud-app/local-visualization
       upload_all: 0
 
     steps:
@@ -27,9 +30,11 @@ jobs:
       run: |
         echo "changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-          if [[ "$file" == *"$substr_device_app"* ]]; then
+          if [[ "$file" == *"$folder_install"* ]]; then
+            echo "upload_install=1" >> $GITHUB_ENV
+          elif [[ "$file" == *"$folder_device_app"* ]]; then
             echo "upload_device_app=1" >> $GITHUB_ENV
-          elif [[ "$file" == *"$substr_local_vis_app"* ]]; then
+          elif [[ "$file" == *"$folder_local_vis_app"* ]]; then
             echo "upload_local_vis_app=1" >> $GITHUB_ENV
           fi
         done
@@ -37,22 +42,26 @@ jobs:
     - name: applying upload_all correction
       run: |
         echo "applying upload_all correction"
+        echo "upload_install=$(( ${{ env.upload_install }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
         echo "upload_device_app=$(( ${{ env.upload_device_app }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
         echo "upload_local_vis_app=$(( ${{ env.upload_local_vis_app }} || ${{ env.upload_all }} ))" >> $GITHUB_ENV
 
     - name: view upload status
       run: |
+        echo "install: ${{ env.upload_install }}"
         echo "device app: ${{ env.upload_device_app }}"
         echo "vis app: ${{ env.upload_local_vis_app }}"
 
     - name: create tarballs
       run: |
         mkdir ./tar
+        echo "packing $src_install"
+        tar -czvf ./tar/$src_install ./$folder_device_app
         echo "packing $src_device_app"
         echo "excluding device-app/modbus/resources/config-modbus-master.json"
-        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' --exclude='device-app/modbus/resources/config-modbus-master.json' -czvf ./tar/$src_device_app ./$substr_device_app
+        tar --exclude='device-app/modbus/resources/config-modbus-master.json' -czvf ./tar/$src_device_app ./$folder_device_app
         echo "packing $src_cloud_local_vis_app"
-        tar --exclude='./.git' --exclude='./.github' --exclude='./tar' -czvf ./tar/$src_cloud_local_vis_app ./$substr_local_vis_app
+        tar -czvf ./tar/$src_cloud_local_vis_app ./$folder_local_vis_app
 
     - name: qbee.io authentication
       id: qbee-auth
@@ -60,6 +69,31 @@ jobs:
       with:
           login: ${{ secrets.QBEE_USER }}
           password: ${{ secrets.QBEE_PW }}
+
+    - name: qbee.io file upload ${{ env.src_install }}
+      uses: qbee-io/file-upload-action@v1.2
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: ${{ env.install }}
+          qbee_directory: '/'
+          local_directory: 'tar'
+          run: ${{ env.upload_install }}
+
+    - name: qbee.io file upload plot_server.service
+      uses: qbee-io/file-upload-action@v1.2
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: 'plot_server.service'
+          qbee_directory: '/'
+          local_directory: 'plot_server'
+
+    - name: qbee.io file upload param.cfg
+      uses: qbee-io/file-upload-action@v1.2
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: 'param.cfg'
+          qbee_directory: '/'
+          local_directory: 'plot_server'
 
     - name: qbee.io file upload ${{ env.src_device_app }}
       uses: qbee-io/file-upload-action@v1.2

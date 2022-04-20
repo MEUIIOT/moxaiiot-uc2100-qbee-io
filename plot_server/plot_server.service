@@ -1,0 +1,14 @@
+[Unit]
+Description=plot_server service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+Restart=on-failure
+User={{user}}
+ExecStart=/usr/bin/python3 -m plot_server --cfg=/etc/plot_server/param.cfg
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -2,6 +2,49 @@
     "enabled": true,
     "files": [
         {
+            "templates":[
+                {
+                    "source": "/install.tar",
+                    "destination": "/home/moxa/application/tar/install.tar",
+                    "is_template": false
+                }
+            ],
+            "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/install.tar -C /home/moxa/application/ && bash /home/moxa/application/install/install.sh"
+        },
+        {
+            "templates":[
+                {
+                    "source": "/plot_server.service",
+                    "destination": "/etc/systemd/system/plot_server.service",
+                    "is_template": true
+                },
+                {
+                    "source": "param.cfg",
+                    "destination": "/etc/plot_server/param.cfg",
+                    "is_template": true
+                }
+            ],
+            "parameters": [
+                {
+                    "key": "user",
+                    "value": "moxa"
+                },
+                {
+                    "key": "host",
+                    "value": "0.0.0.0"
+                },
+                {
+                    "key": "port",
+                    "value": "8080"
+                },
+                {
+                    "key": "max-points",
+                    "value": "100"
+                }
+            ],
+            "command": "systemctl restart plot_server && systemctl status plot_server"
+        },
+        {
             "templates": [
                 {
                     "source": "/config-modbus-master.json",
