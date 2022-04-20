@@ -56,7 +56,7 @@ jobs:
       run: |
         mkdir ./tar
         echo "packing $src_install"
-        tar -czvf ./tar/$src_install ./$folder_device_app
+        tar -czvf ./tar/$src_install ./$folder_install
         echo "packing $src_device_app"
         echo "excluding device-app/modbus/resources/config-modbus-master.json"
         tar --exclude='device-app/modbus/resources/config-modbus-master.json' -czvf ./tar/$src_device_app ./$folder_device_app
