@@ -77,7 +77,8 @@ jobs:
           filename: ${{ env.install }}
           qbee_directory: '/'
           local_directory: 'tar'
-          run: ${{ env.upload_install }}
+          run: 1
+          #${{ env.upload_install }}
 
     - name: qbee.io file upload plot_server.service
       uses: qbee-io/file-upload-action@v1.2
