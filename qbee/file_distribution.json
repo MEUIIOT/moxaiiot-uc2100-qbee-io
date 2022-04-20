@@ -42,7 +42,7 @@
                     "value": "100"
                 }
             ],
-            "command": "systemctl restart plot_server && systemctl status plot_server"
+            "command": "systemctl restart plot_server && journalctl -u plot_server -n 10"
         },
         {
             "templates": [
