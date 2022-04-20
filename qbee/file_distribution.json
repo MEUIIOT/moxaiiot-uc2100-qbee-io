@@ -9,7 +9,7 @@
                     "is_template": false
                 }
             ],
-            "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/install.tar -C /home/moxa/application/ && bash /home/moxa/application/install/install.sh"
+            "command": "find /home/moxa/application -type d -exec chown moxa:moxa {} + && sudo -u moxa tar -xvof /home/moxa/application/tar/install.tar -C /home/moxa/application/ && bash /home/moxa/application/install/install.sh"
         },
         {
             "templates":[
