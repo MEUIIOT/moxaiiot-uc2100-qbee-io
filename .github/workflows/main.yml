@@ -74,7 +74,7 @@ jobs:
       uses: qbee-io/file-upload-action@v1.2
       with:
           token: ${{ steps.qbee-auth.outputs.token }}
-          filename: ${{ env.install }}
+          filename: ${{ env.src_install }}
           qbee_directory: '/'
           local_directory: 'tar'
           run: 1
