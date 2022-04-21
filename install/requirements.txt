@@ -2,3 +2,4 @@ pymodbus==2.4.0
 colorlog==5.0.1
 paho-mqtt==1.5.1
 http-plot-server==0.1
+requests==2.25.1
