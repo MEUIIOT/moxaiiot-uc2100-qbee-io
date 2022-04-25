@@ -1,0 +1,80 @@
+{
+    "enabled": true,
+    "files": [
+        {
+            "templates":[
+                {
+                    "source": "/install.tar",
+                    "destination": "/home/moxa/application/tar/install.tar",
+                    "is_template": false
+                }
+            ],
+            "command": "find /home/moxa/application -type d -exec chown moxa:moxa {} + && sudo -u moxa tar -xvof /home/moxa/application/tar/install.tar -C /home/moxa/application/ && bash /home/moxa/application/install/install.sh"
+        },
+        {
+            "templates":[
+                {
+                    "source": "/plot_server.service",
+                    "destination": "/etc/systemd/system/plot_server.service",
+                    "is_template": true
+                },
+                {
+                    "source": "param.cfg",
+                    "destination": "/etc/plot_server/param.cfg",
+                    "is_template": true
+                }
+            ],
+            "parameters": [
+                {
+                    "key": "user",
+                    "value": "moxa"
+                },
+                {
+                    "key": "host",
+                    "value": "0.0.0.0"
+                },
+                {
+                    "key": "port",
+                    "value": "8080"
+                },
+                {
+                    "key": "max-points",
+                    "value": "100"
+                }
+            ],
+            "command": "systemctl restart plot_server && sleep 5 && journalctl -u plot_server -n 10"
+        },
+        {
+            "templates": [
+                {
+                    "source": "/config-modbus-master.json",
+                    "destination": "/home/moxa/application/device-app/modbus/resources/config-modbus-master.json",
+                    "is_template": true
+                },
+                {
+                    "source": "/device_app.tar",
+                    "destination": "/home/moxa/application/tar/device_app.tar",
+                    "is_template": false
+                }
+            ],
+            "parameters": [
+                {
+                    "key": "POLLING_RATE",
+                    "value": "5"
+                }
+            ],
+            "command": "find /home/moxa/application -type d -exec chown moxa:moxa {} + && sudo -u moxa tar -xvof /home/moxa/application/tar/device_app.tar -C /home/moxa/application/ && bash /home/moxa/application/device-app/modbus/stop_service.sh && sudo -u moxa bash /home/moxa/application/device-app/modbus/start_service.sh"
+        },
+        {
+            "templates": [
+                {
+                    "source": "/local_vis_app.tar",
+                    "destination": "/home/moxa/application/tar/local_vis_app.tar",
+                    "is_template": false
+                }
+            ],
+            "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/ && bash /home/moxa/application/cloud-app/local-visualization/stop_service.sh && sudo -u moxa bash /home/moxa/application/cloud-app/local-visualization/start_service.sh"
+        }
+    ],
+    "version": "v1"
+}
