@@ -20,7 +20,7 @@ jobs:
       folder_install: install
       folder_device_app: device-app
       folder_local_vis_app: cloud-app/local-visualization
-      upload_all: 0
+      upload_all: 1
 
     steps:
     - uses: actions/checkout@v2
