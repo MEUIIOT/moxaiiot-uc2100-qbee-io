@@ -2,39 +2,22 @@
 	"name": "PLC1",
 	"tags": [{
 			"enable": true,
-			"commandName": "Process Temperature",
+			"commandName": "cpuLoading",
 			"modbusDataType": "Int",
 			"modbusFunction": "04-ReadInputRegisters",
 			"address": 512,
 			"count": 1
 		},
 		{
-			"enable": true,
-			"commandName": "Current",
-			"modbusDataType": "Int",
-			"modbusFunction": "04-ReadInputRegisters",
-			"address": 514,
-			"count": 1
-		},
-
-		{
-			"enable": false,
-			"commandName": "oilTempC",
-			"modbusDataType": "Int",
-			"modbusFunction": "04-ReadInputRegisters",
-			"address": 513,
-			"count": 1
-		},
-		{
-			"enable": false,
-			"commandName": "di0",
+			"enable": enable,
+			"commandName": "pushButton",
 			"modbusDataType": "Boolean",
 			"modbusFunction": "02-ReadDiscreteInputs",
 			"address": 0,
 			"count": 1
 		},
 		{
-			"enable": false,
+			"enable": enable,
 			"commandName": "LedRedStatus",
 			"modbusDataType": "Boolean",
 			"modbusFunction": "01-ReadCoils",
@@ -42,7 +25,7 @@
 			"count": 1
 		},
 		{
-			"enable": false,
+			"enable": enable,
 			"commandName": "LedYellowStatus",
 			"modbusDataType": "Boolean",
 			"modbusFunction": "01-ReadCoils",
@@ -50,7 +33,7 @@
 			"count": 1
 		},
 		{
-			"enable": false,
+			"enable": enable,
 			"commandName": "LedGreenStatus",
 			"modbusDataType": "Boolean",
 			"modbusFunction": "01-ReadCoils",
