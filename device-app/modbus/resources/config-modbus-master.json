@@ -4,7 +4,7 @@
 	{
 		"enable": true,
 		"device_name": "iologik",
-		"slave_ip": "192.168.4.100",
+		"slave_ip": "192.168.4.200",
 		"slave_port": 502,
 		"slave_id": "1",
 		"modbus_template": "ioLogik-demokit-right.json",
