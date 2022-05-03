@@ -1,16 +1,16 @@
 {
-    "Process Temperature":{
-        "range": [0, 500],
+    "cpuLoading":{
+        "range": [0, 10],
         "length": 65536,
-        "unit": "C",
+        "unit": "A",
         "suffix": " (transformed)",
         "enabled": true
     },
 
-    "Current":{
-        "range": [0,10],
-        "length": 65536,
-        "unit": "A",
+    "pushButton":{
+        "range": [0,1],
+        "length": 1,
+        "unit": "status",
         "suffix": " (transformed)",
         "enabled": true
     }
