@@ -20,7 +20,7 @@ jobs:
       folder_install: install
       folder_device_app: device-app
       folder_local_vis_app: cloud-app/local-visualization
-      upload_all: 0
+      upload_all: 1
 
     steps:
     - uses: actions/checkout@v2
@@ -70,8 +70,8 @@ jobs:
       id: qbee-auth
       uses: qbee-io/authenticate-action@v1
       with:
-          login: ${{ secrets.QBEE_USER }}
-          password: ${{ secrets.QBEE_PW }}
+          login: ${{ secrets.USERNAME_KEY }}
+          password: ${{ secrets.PASSWORD_KEY }}
 
     - name: qbee.io file upload ${{ env.src_install }}
       uses: qbee-io/file-upload-action@v1.2
@@ -124,6 +124,13 @@ jobs:
           qbee_directory: '/'
           local_directory: 'device-app/modbus/resources/'
 
+    - name: qbee.io file upload modbus.service
+      uses: qbee-io/file-upload-action@v1.2
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: 'modbus.service'
+          qbee_directory: '/'
+          local_directory: 'device-app/modbus/'
 
     - name: qbee.io file distribtuion
       uses: qbee-io/file-distribution-action@v1
