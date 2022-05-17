@@ -67,6 +67,16 @@
             ],
             "command": "systemctl daemon-reload && systemctl enable modbus.service && systemctl restart modbus.service && sleep 5 && journalctl -u modbus -n 50"
         },
+        {
+            "templates": [
+                {
+                    "source": "/localvis.service",
+                    "destination": "/etc/systemd/system/localvis.service",
+                    "is_template": false
+                }
+            ],
+            "command": "systemctl daemon-reload && systemctl enable localvis.service && systemctl restart localvis.service && sleep 5 && journalctl -u localvis -n 50"
+        },
 		{
 			"templates": [{
 				"source": "/local_vis_app.tar",

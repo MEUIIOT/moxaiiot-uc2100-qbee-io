@@ -134,6 +134,14 @@ jobs:
           qbee_directory: '/'
           local_directory: 'device-app/modbus/'
 
+    - name: qbee.io file upload localvis.service
+      uses: qbee-io/file-upload-action@v1.2
+      with:
+          token: ${{ steps.qbee-auth.outputs.token }}
+          filename: 'localvis.service'
+          qbee_directory: '/'
+          local_directory: 'cloud-app/local-visualization/'
+
     - name: qbee.io file distribtuion
       uses: qbee-io/file-distribution-action@v1
       with:
