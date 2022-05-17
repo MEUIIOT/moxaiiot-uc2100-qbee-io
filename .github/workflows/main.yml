@@ -72,8 +72,8 @@ jobs:
       id: qbee-auth
       uses: qbee-io/authenticate-action@v1
       with:
-          login: ${{ secrets.USERNAME_KEY }}
-          password: ${{ secrets.PASSWORD_KEY }}
+          login: ${{ secrets.QBEE_USER }}
+          password: ${{ secrets.QBEE_PW }}
 
     - name: qbee.io file upload ${{ env.src_install }}
       uses: qbee-io/file-upload-action@v1.2
