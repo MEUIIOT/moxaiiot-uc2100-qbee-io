@@ -70,21 +70,23 @@
         {
             "templates": [
                 {
+                    "source": "/local_vis_app.tar",
+                    "destination": "/home/moxa/application/tar/local_vis_app.tar",
+                    "is_template": false
+                }
+            ],
+            "command": "sudo -u moxa tar -xvof /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/"
+        },
+        {
+            "templates": [
+                {
                     "source": "/localvis.service",
                     "destination": "/etc/systemd/system/localvis.service",
                     "is_template": false
                 }
             ],
             "command": "systemctl daemon-reload && systemctl enable localvis.service && systemctl restart localvis.service && sleep 5 && journalctl -u localvis -n 50"
-        },
-		{
-			"templates": [{
-				"source": "/local_vis_app.tar",
-				"destination": "/home/moxa/application/tar/local_vis_app.tar",
-				"is_template": false
-			}],
-			"command": "sudo -u moxa tar -xvof /home/moxa/application/tar/local_vis_app.tar -C /home/moxa/application/"
-		}
+        }
 	],
 	"version": "v1"
 }
