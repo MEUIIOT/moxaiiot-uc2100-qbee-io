@@ -1,6 +1,6 @@
 # Industrial IoT on a shoestring -Solution Architecture (Python)
 
-![](media/solution-architecture-v3.jpg)
+![](media/solution-architecture-v3.png)
 
 # Getting Started
 By default on UC computer Debian9 linux python is not pre-installed.
