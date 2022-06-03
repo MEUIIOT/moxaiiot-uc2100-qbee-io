@@ -7,4 +7,6 @@
 
 -	Application Note: https://pages.moxa.com/eu-uc-2100-application-note-gated-EN.html?utm_medium=website&utm_source=github&utm_campaign=2022-05-MEU-EN-UC-2100-Campaign
 
--	Webinar Recording: https://moxa-europe.com/news-events
+-	Webinar Recording: https://vimeo.com/713744866
+
+- Moxa and Qbee IIoT Partner Profile: https://moxa-europe.com/partner/qbee/
