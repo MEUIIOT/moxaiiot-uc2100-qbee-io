@@ -1,1 +1,1 @@
-# ToDo in future
+# AWS IoT Core Connector using Paho MQTT

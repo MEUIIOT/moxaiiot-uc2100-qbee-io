@@ -1,0 +1,20 @@
+{
+	"general": {
+		"enable": true, 
+		"broker": "ENTER-AWS-IOT-CORE-BROKER-URL-HERE",
+	    "client_id": "ENTER-THING-NAME",
+		"port": 8883,
+		"clean_session": false,
+		"keep_alive_sec": 15,
+		"topic": "uc2100/Modbus/Telemetry/",
+		"publish_interval": 5
+	},
+	"certificates": {
+		"trusted_root_ca": "certs/root-CA.crt",
+		"x509_certificate": "certs/ENTER-X509-CERTIFIATE-HERE",
+		"private_key": "certs/ENTER-PRIVATE-KEY-HERE"
+	},
+	"troubleshoot": {
+		"enable_debug_mode": false
+	}
+}
