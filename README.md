@@ -53,6 +53,17 @@ Copy the Group ID into notepad
 ![image](https://user-images.githubusercontent.com/22453359/175912690-5a6279e8-bb4e-470f-ba3d-9c107e81ba9f.png)
 
 Configure secrets on Github forked repository 
+![image](https://user-images.githubusercontent.com/22453359/175932954-8d17a5dd-1ba8-40dc-a5a7-7cd7196171e9.png)
+
+
+### 8) Trigger CI/CD pipeline to deploy soruce code onto Moxa UC-2100
+
+The pipleline is configured to trigger on push (E.g: when you edit the code commit the change, the chnage will be deploye dto the device automaically)
+
+You can check the triiger under Actions 
+![image](https://user-images.githubusercontent.com/22453359/175932705-6aae5005-f8c9-43f5-9bf5-363b702d15b9.png)
+
+
 
 
 
