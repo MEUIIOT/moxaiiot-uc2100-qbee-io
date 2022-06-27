@@ -64,7 +64,35 @@ You can check the triiger under Actions
 ![image](https://user-images.githubusercontent.com/22453359/175932705-6aae5005-f8c9-43f5-9bf5-363b702d15b9.png)
 
 
+A successfull build shows following output
+![image](https://user-images.githubusercontent.com/22453359/176025223-07a79bad-1547-4fa6-ad04-90c485b11ba0.png)
 
+### 9) Verify app running successfully on UC-2100 
+
+You can acesss the device via SSH on your Qbee account. 
+![image](https://user-images.githubusercontent.com/22453359/176029299-9197970f-db4f-4bc3-a6f4-48f8244764a3.png)
+
+Verify status of Modbus Service 
+![image](https://user-images.githubusercontent.com/22453359/176029993-e408a3cc-d129-4b98-b741-766163d7dac9.png)
+
+Verify status of Plot Server
+![image](https://user-images.githubusercontent.com/22453359/176029916-f1de0e0a-5a0d-4277-82df-98749d45abbe.png)
+
+
+### 10) Access plot Server listening on port 8080 
+
+Both cpuLoading and pushButton is real sensor data being published via ModbusTCP protocol to Internal MQTT Broker
+
+Modbus configuration has been used in this demo found here:
+https://github.com/abadar05/moxaiiot-uc2100-qbee-io/blob/main/device-app/modbus/resources/config-modbus-master.json
+
+Modbus template has been used in this demo found here:
+https://github.com/abadar05/moxaiiot-uc2100-qbee-io/blob/main/device-app/modbus/resources/modbus_templates/ioLogik-demokit-right.json
+
+Plot Server configurtion found here
+https://github.com/abadar05/moxaiiot-uc2100-qbee-io/blob/main/cloud-app/local-visualization/resources/transformation_config.json
+
+![image](https://user-images.githubusercontent.com/22453359/176030378-dba99bcd-77f6-4c8b-9c10-4997175abc77.png)
 
 
 
