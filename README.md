@@ -15,9 +15,9 @@
 # How to deploy software from Git repository to Moxa UC-2100 using CI/CD pipeline
 
 ## Prequisites: 
-1- Device is connected to Qbee Account
-2- Github account 
-3- UC-2100 or any other UC series embedded computer  
+ - UC-2100 or any other UC series embedded computer  
+ - Device is registered and connected to Qbee Account
+ - Must have Github account
 
 ### 1) Create qbee account
 How to create see here: https://www.app.qbee.io/#/register?regtype=trial
