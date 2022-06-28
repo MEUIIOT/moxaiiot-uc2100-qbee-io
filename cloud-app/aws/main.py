@@ -74,7 +74,7 @@ def main():
     abs_path = os.path.dirname(os.path.realpath(__file__))
     #cloud_mqtt_broker_queue = Queue()
     cloud_mqtt_broker_queue = deque(maxlen=100)
-    """
+    
     # Read configuretaion file into python object
     config_int_broker = read_ext_config(
         os.path.join(abs_path,'resources/config-internal-broker.json')
@@ -83,7 +83,7 @@ def main():
 
     int_broker_subscriber = MosquittoMQTTSubscriber(logger, cloud_mqtt_broker_queue, topic=config_int_broker["general"]["topic"])
     int_broker_subscriber.run()
-    """
+   
     # Read configuretaion file into python object
     config_ext_broker = read_ext_config(
         os.path.join('resources/config-external-broker.json')
