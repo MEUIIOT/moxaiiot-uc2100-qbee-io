@@ -59,3 +59,6 @@ Add .cert before .pem.crt see example in resources/config-external-broker.json
                 "private_key": "certs/device-certificate.private.pem.key"
         },
 ```
+
+9) Test MQTT messages on AWS IoT Core 
+![image](https://user-images.githubusercontent.com/22453359/176219318-fe958db1-878e-4247-94a2-554d1f918a8f.png)
