@@ -40,5 +40,22 @@ https://docs.aws.amazon.com/iot/latest/developerguide/iot-policy-actions.html?ic
 
 8) Copy Root CA, X509 and Private key under /certs folder
 
+## ISSUE 
+```
+Issue Paho-MQTT x.509 device certificate
 
+context.load_cert_chain(certfile, keyfile)
+FileNotFoundError: [Errno 2] No such file or directory
 
+device-certificate.pem.crt (downloaded from AWS)
+
+Fix:
+
+Add .cert before .pem.crt see example in resources/config-external-broker.json
+
+ "certificates": {
+                "trusted_root_ca": "certs/AmazonRootCA1.pem",
+                "x509_certificate": "certs/device-certificate.cert.pem.crt",
+                "private_key": "certs/device-certificate.private.pem.key"
+        },
+```
