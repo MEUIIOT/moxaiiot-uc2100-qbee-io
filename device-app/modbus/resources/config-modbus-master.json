@@ -4,24 +4,26 @@
 	{
 		"enable": true,
 		"device_name": "iologik",
-		"slave_ip": "192.168.4.200",
+		"slave_ip": "192.168.32.210",
 		"slave_port": 502,
 		"slave_id": "1",
 		"modbus_template": "ioLogik-demokit-right.json",
-		"polling_interval_sec": {{POLLING_RATE}}
+		"polling_interval_sec": 1
 	},
 	"modbusRTU": {
-		"enable": false,
+		"enable": true,
+		"device_name": "THD-Sensor",
 		"method": "rtu",
-		"baudrate": 38400,
+		"baudrate": 9600,
 		"port": "/dev/ttyM0",
 		"port_mode": "RS485-2W",
-		"request_timeout": "None",
+		"request_timeout": 5,
 		"stop_bits": "STOPBITS_ONE",
 		"parity": "PARITY_EVEN",
-		"modbus_template": "ADTEK-ADP-PM-A.json"
+		"polling_interval_sec": 1,
+		"modbus_template": "temperature-sensor.json"
 	},
 	"troubleshoot": {
-		"enable_debug_mode": false
+		"enable_debug_mode": false 
 	}
 }
