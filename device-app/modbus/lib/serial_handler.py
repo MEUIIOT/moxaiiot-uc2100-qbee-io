@@ -1,19 +1,29 @@
 
 import logging 
-from pymodbus.client.sync import ModbusSerialClient as SerialClient
+import sys 
+import os 
+from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 
 logger = logging.getLogger(__name__)
 
-class SerialConnectionHandler:
 
-    def __init__(self):
+
+class SerialConnectionHandler:
+    
+    def __init__(self, method, port, timeout, baudrate, device_name):
     
         self.IS_CONNECTED = False
         self.serial_connection = None    
-            
-            
-    def init_modbus_serial(self, method, port, timeout, baudrate):
-        self.serial_connection = SerialClient(method, port, timeout, baudrate)
+        
+        self.method = method
+        self.port = port
+        self.timeout = timeout
+        self.baudrate = baudrate        
+        self.device_name = device_name     
+        
+    def init_modbus_serial(self):
+        self.serial_connection = ModbusClient(method=self.method, port=self.port, timeout=self.timeout,
+                           baudrate=self.baudrate)
         return self.serial_connection
     
     def connect(self):
@@ -22,7 +32,7 @@ class SerialConnectionHandler:
         if output is True:
             self.IS_CONNECTED = True
             logger.info("*************************************************************")
-            logger.info("Connected successfully to Modbus RTU Slave: {}".format(self.serial_connection))
+            logger.info("Connected successfully to Modbus RTU Slave: {}".format(self.device_name))
             logger.info("*************************************************************")
             return True
         else:
@@ -38,7 +48,7 @@ class SerialConnectionHandler:
         logger.info("***************************************************")
         logger.info("Calling mx-uart-ctl tool to change serial port mode")
         logger.info("***************************************************")
-
+        
         # Convert pyserial port names into mx-uart-ctl tool port numbers
         if port == "/dev/ttyM0":
             port = 0

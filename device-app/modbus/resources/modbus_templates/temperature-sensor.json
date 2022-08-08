@@ -1,0 +1,20 @@
+{
+	"name": "Motor1",
+	"tags": [{
+		"enable": true,
+		"commandName": "temperature",
+		"modbusDataType": "Int",
+		"modbusFunction": "04-ReadInputRegisters",
+		"address": 1,
+		"count": 1
+	},
+		{
+		"enable": true,
+		"commandName": "humidity",
+		"modbusDataType": "Int",
+		"modbusFunction": "04-ReadInputRegisters",
+		"address": 2,
+		"count": 1
+	}
+	]
+}
