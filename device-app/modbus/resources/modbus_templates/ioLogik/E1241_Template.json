@@ -1,0 +1,69 @@
+{
+        "name": "E1241_Template",
+        "tags": [
+                {
+                        "address": 1024,
+                        "commandName": "ao_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 1024,
+                        "commandName": "ao_w_0",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 1025,
+                        "commandName": "ao_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 1025,
+                        "commandName": "ao_w_1",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 1026,
+                        "commandName": "ao_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 1026,
+                        "commandName": "ao_w_2",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 1027,
+                        "commandName": "ao_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 1027,
+                        "commandName": "ao_w_3",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                }
+        ]
+}

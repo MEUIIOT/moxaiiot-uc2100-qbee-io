@@ -1,0 +1,69 @@
+{
+        "name": "E1262_Template",
+        "tags": [
+                {
+                        "address": 2048,
+                        "commandName": "tci_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2050,
+                        "commandName": "tci_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2052,
+                        "commandName": "tci_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2054,
+                        "commandName": "tci_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2056,
+                        "commandName": "tci_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2058,
+                        "commandName": "tci_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2060,
+                        "commandName": "tci_r_6",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2062,
+                        "commandName": "tci_r_7",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "uint32",
+                        "modbusFunction": "04-ReadInputRegisters"
+                }
+        ]
+}
