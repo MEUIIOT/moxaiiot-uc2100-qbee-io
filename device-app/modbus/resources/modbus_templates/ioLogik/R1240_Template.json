@@ -1,0 +1,69 @@
+{
+        "name": "R1240_Template",
+        "tags": [
+                {
+                        "address": 704,
+                        "commandName": "ai_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 705,
+                        "commandName": "ai_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 706,
+                        "commandName": "ai_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 707,
+                        "commandName": "ai_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 708,
+                        "commandName": "ai_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 709,
+                        "commandName": "ai_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 710,
+                        "commandName": "ai_r_6",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 711,
+                        "commandName": "ai_r_7",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                }
+        ]
+}

@@ -1,0 +1,101 @@
+{
+        "name": "R2140_Template",
+        "tags": [
+                {
+                        "address": 0,
+                        "commandName": "ai_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 1,
+                        "commandName": "ai_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 2,
+                        "commandName": "ai_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 3,
+                        "commandName": "ai_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 4,
+                        "commandName": "ai_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 5,
+                        "commandName": "ai_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 6,
+                        "commandName": "ai_r_6",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 7,
+                        "commandName": "ai_r_7",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 0,
+                        "commandName": "ro_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 0,
+                        "commandName": "ro_w_0",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 1,
+                        "commandName": "ro_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 1,
+                        "commandName": "ro_w_1",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                }
+        ]
+}
