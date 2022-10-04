@@ -1,0 +1,53 @@
+{
+        "name": "E1260_Template",
+        "tags": [
+                {
+                        "address": 1536,
+                        "commandName": "di_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 1537,
+                        "commandName": "di_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 1538,
+                        "commandName": "di_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 1539,
+                        "commandName": "di_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 1540,
+                        "commandName": "di_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                },
+                {
+                        "address": 1541,
+                        "commandName": "di_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "04-ReadInputRegisters"
+                }
+        ]
+}

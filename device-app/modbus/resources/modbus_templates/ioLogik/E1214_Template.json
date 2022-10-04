@@ -1,0 +1,149 @@
+{
+        "name": "E1214_Template",
+        "tags": [
+                {
+                        "address": 0,
+                        "commandName": "di_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 1,
+                        "commandName": "di_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 2,
+                        "commandName": "di_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 3,
+                        "commandName": "di_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 4,
+                        "commandName": "di_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 5,
+                        "commandName": "di_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 0,
+                        "commandName": "ro_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-ReadCoils"
+                },
+                {
+                        "address": 0,
+                        "commandName": "ro_w_0",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-WriteCoils"
+                },
+                {
+                        "address": 1,
+                        "commandName": "ro_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-ReadCoils"
+                },
+                {
+                        "address": 1,
+                        "commandName": "ro_w_1",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-WriteCoils"
+                },
+                {
+                        "address": 2,
+                        "commandName": "ro_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-ReadCoils"
+                },
+                {
+                        "address": 2,
+                        "commandName": "ro_w_2",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-WriteCoils"
+                },
+                {
+                        "address": 3,
+                        "commandName": "ro_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-ReadCoils"
+                },
+                {
+                        "address": 3,
+                        "commandName": "ro_w_3",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-WriteCoils"
+                },
+                {
+                        "address": 4,
+                        "commandName": "ro_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-ReadCoils"
+                },
+                {
+                        "address": 4,
+                        "commandName": "ro_w_4",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-WriteCoils"
+                },
+                {
+                        "address": 5,
+                        "commandName": "ro_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-ReadCoils"
+                },
+                {
+                        "address": 5,
+                        "commandName": "ro_w_5",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "01-WriteCoils"
+                }
+        ]
+}

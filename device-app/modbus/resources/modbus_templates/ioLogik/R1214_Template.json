@@ -1,0 +1,149 @@
+{
+        "name": "R1214_Template",
+        "tags": [
+                {
+                        "address": 0,
+                        "commandName": "di_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 1,
+                        "commandName": "di_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 2,
+                        "commandName": "di_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 3,
+                        "commandName": "di_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 4,
+                        "commandName": "di_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 5,
+                        "commandName": "di_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Boolean",
+                        "modbusFunction": "02-ReadDiscreteInputs"
+                },
+                {
+                        "address": 320,
+                        "commandName": "ro_r_0",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 320,
+                        "commandName": "ro_w_0",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 321,
+                        "commandName": "ro_r_1",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 321,
+                        "commandName": "ro_w_1",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 322,
+                        "commandName": "ro_r_2",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 322,
+                        "commandName": "ro_w_2",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 323,
+                        "commandName": "ro_r_3",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 323,
+                        "commandName": "ro_w_3",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 324,
+                        "commandName": "ro_r_4",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 324,
+                        "commandName": "ro_w_4",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                },
+                {
+                        "address": 325,
+                        "commandName": "ro_r_5",
+                        "count": 1,
+                        "enable": true,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-ReadHoldingRegisters"
+                },
+                {
+                        "address": 325,
+                        "commandName": "ro_w_5",
+                        "count": 1,
+                        "enable": false,
+                        "modbusDataType": "Int",
+                        "modbusFunction": "03-WriteHoldingRegisters"
+                }
+        ]
+}
